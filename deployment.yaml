@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: $KUBERNETES_DEPLOYMENT_NAME
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: $KUBERNETES_DEPLOYMENT_NAME
+  template:
+    metadata:
+      labels:
+        app: $KUBERNETES_DEPLOYMENT_NAME
+    spec:
+      containers:
+        - name: $KUBERNETES_DEPLOYMENT_NAME
+          image: $DOCKER_IMAGE_NAME
+          ports:
+            - containerPort: 80
