@@ -7,5 +7,5 @@ RUN gradle build
 # Stage 2: Run Stage
 FROM openjdk:11-jre
 WORKDIR /hello-world
-COPY --from=build /java-app/hello-world/build/libs/hello-world.jar .
+COPY --from=build /hello-world/build/libs/hello-world.jar .
 CMD ["java", "-jar", "hello-world.jar"]

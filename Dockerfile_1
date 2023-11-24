@@ -1,4 +1,4 @@
 FROM openjdk:11-jre
 WORKDIR /app
-COPY app/hello-world/build/libs/hello-world.jar .
+COPY hello-world/build/libs/hello-world.jar .
 CMD ["java", "-jar", "hello-world.jar"]
